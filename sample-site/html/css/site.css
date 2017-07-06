@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+/* 
+	サイトUI CSS
+
+	ヘッダやフッタ、メニューなどサイトUIを定義しています。
+	CSSを変更することにより、サイトデザインをカスタマイズことができます。
+
+	※このCSSで定義したクラスは、CMS管理画面でのページ編集においては利用できません。
+
+ */
+ 
+
+/* ! ---------- アイコンフォント ---------- ---------- ---------- ---------- */
+
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+
+/* ! ---------- reset ---------- ---------- ---------- ---------- */
+
+body ,h1, h2, h3, h4, h5, h6, p, ol, ul, li, blockquote, pre, a ,div {
+	margin: 0; padding: 0; font-size:100%; line-height: inherit;
+	box-sizing: border-box;
+}
+body { -webkit-text-size-adjust: 100%; line-height: 1;}
+ol, ul { list-style: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+th, td { vertical-align: top; text-align:left; font-weight: normal;}
+img { border: 0; vertical-align: bottom;}
+
+
+/* ! ---------- clearfix ---------- ---------- ---------- ---------- */
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+
+
+/* ! ---------- 全体設定 ---------- ---------- ---------- ---------- */
+
+body{
+	background: #fff;
+	font-family: Helvetica , Arial , Verdana , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "メイリオ" , Meiryo , sans-serif;
+	color:#333;
+	line-height: 1;
+    /* 文字サイズは、block.cssで定義しています */
+}
+a {color:#4A66A0;}
+
+/* ! ---------- UIの寸法 ---------- ---------- ---------- ---------- */
+
+#HeaderArea .inner,
+#GlobalNaviArea .inner,
+#BredList .inner,
+#BodyArea,
+#FooterNaviArea .inner,
+#FooterExtraArea .inner { width: 940px; }
+#ContentsArea { width: 720px; }
+#SideArea{ width:190px; }
+
+
+/* ! ---------- 全体 #Wapper ---------- ---------- ---------- ---------- */
+
+/* 全体 */
+#Wapper {}
+
+
+/* ! ---------- ヘッダエリア #HeaderArea ---------- ---------- ---------- ---------- */
+
+/* ヘッダエリア全体 */
+#HeaderArea {position: relative; height: 100px;margin: 0 0 30px 0;color: #333;}
+#HeaderArea .inner { margin: 0 auto; position: relative; }
+#HeaderArea a{ color: #333;text-decoration: none; }
+#HeaderArea .header_read{color: #888;}
+#HeaderArea .header_name{color: #333;}
+#HeaderArea .header_tel{color: #333;}
+#HeaderArea .header_time{color: #888;}
+#HeaderArea .header_contact{color: #333;}
+
+
+/* ! ---------- ヘッダビジュアル #HeaderVisual ---------- ---------- ---------- ---------- */
+
+#VisualArea { height: 150px; margin: -30px 0 30px 0;}
+#VisualArea { background:#00aa00 url(../../images/visual_main.jpg) center center no-repeat;}
+body#index #VisualArea { height: 300px;}
+
+
+/* ! ---------- グローバルナビ #GlobalNaviArea ---------- ---------- ---------- ---------- */
+
+/* グローバルナビ全体 */
+#GlobalNaviArea { background:#00aa00; margin: -30px 0 30px 0;}
+#GlobalNaviArea .inner { margin: 0 auto; }
+#GlobalNaviArea ._level-1 > li { float:left;position: relative;}
+
+/* ナビの各ボタンのデザイン */
+#GlobalNaviArea li > a { display: block; border-right: 1px solid rgba(255,255,255,0.25); padding: 20px 2px 14px 2px;  text-align: center; text-decoration: none;}
+#GlobalNaviArea li > a { color:#fff;}
+#GlobalNaviArea li .t1 { display: block; font-size: 14px;}
+#GlobalNaviArea li .t2 { display: block; font-size: 9px; opacity: 0.5; margin: 2px 0 0 0;}
+#GlobalNaviArea li:first-child a { border-left: 1px solid rgba(255,255,255,0.25);}
+
+/* 現在表示してるナビのデザイン */
+#GlobalNaviArea li._current > a,
+#GlobalNaviArea li._ownCurrent > a{ background:#008200; }
+
+/* 工事中ナビのデザイン */
+#GlobalNaviArea li._underconst > a{ color:#555; }
+
+
+/* ! ---------- パンくず #BredList ---------- ---------- ---------- ---------- */
+
+#BredList { margin: 0 0 20px 0;height: 20px;}
+#BredList .inner { margin: 0 auto;}
+#BredList a { color: #333;}
+#BredList a:hover { text-decoration:underline;}
+body#index #BredList{display: none;}
+
+
+/* ! ---------- メインカラム #BodyArea,#ContentsArea,#SideArea ---------- ---------- ---------- ---------- */
+
+/* ヘッダの下に位置するメインのエリア */
+#BodyArea { margin: 0 auto;min-height: 300px; }
+
+/* トップページ用コンテンツエリア */
+#ContentsAreaWide {  }
+
+/* コンテンツエリア */
+#ContentsArea { float: right;  }
+
+/* サイドエリア(ローカルナビ等を配置) */
+#SideArea { float: left;}
+
+
+/* ! ---------- サイドローカルナビ #SubNaviArea ---------- ---------- ---------- ---------- */
+
+/* ローカルナビ全体 */
+#SubNaviArea {}
+
+#SubNaviArea ._type-html { padding: 10px 0 5px 0;border-top:none!important;}
+#SubNaviArea ._type-html b{display: block;padding: 15px 0 10px 0;margin-bottom:-5px;font-size:14px;border-bottom: 2px solid #666;}
+#SubNaviArea li > a { display: block;color:#333;text-decoration: none;}
+
+/* ローカルナビ第1階層(タイトル) */
+#SubNaviArea .title { display: block; font-size: 18px; font-weight: bold; margin: 5px 0 25px 0;}
+#SubNaviArea .title .t1{display: block;font-size: 18px;margin: 0 0 5px 0;}
+#SubNaviArea .title .t2{ display: block;font-size: 10px;margin: 0 0 5px 0;}
+
+/* ローカルナビ第2階層 */
+#SubNaviArea ._level-2 {margin:10px 0 2px 0;}
+#SubNaviArea ._level-2 > li {border-top: 1px solid #ddd;}
+#SubNaviArea ._level-2 > li > a { padding: 20px 5px 20px 5px;line-height: 1.2;}
+#SubNaviArea ._level-2 > li._current > a { background:#00aa00;color:#fff;font-weight: bold;}
+#SubNaviArea ._level-2 > li._ownCurrent {}
+
+/* ローカルナビ第3階層 */
+#SubNaviArea ._level-3 {margin:-10px 0 20px 0;padding: 0 0 0 10px;}
+#SubNaviArea ._level-3 > li > a {padding: 10px 5px 10px 5px;line-height: 1.2;}
+#SubNaviArea ._level-3 > li._current > a { background:#00aa00;color:#fff;font-weight: bold;}
+#SubNaviArea ._level-3 > li._ownCurrent {}
+
+/* ローカルナビ第4階層 */
+#SubNaviArea ._level-4 {padding: 0 0 0 10px;}
+#SubNaviArea ._level-4 > li > a {padding: 10px 5px 10px 5px;line-height: 1.2;}
+#SubNaviArea ._level-4 > li._current > a { background:#00aa00;color:#fff;font-weight: bold;}
+
+/* 工事中ナビのデザイン */
+#SubNaviArea li._underconst { opacity: 0.5; }
+
+/* ナビ以外のイレギュラーな要素 */
+#SubNaviArea .extra{margin: 20px 0 10px 0; line-height: 1.4;}
+#SubNaviArea .extra > *{ margin: 0 0 5px 0;}
+
+/*第1階層のトグルは非表示*/
+#SubNaviArea .title ._toggle-icon{display: none;}
+
+
+/* ! ---------- フッタナビエリア #FooterNaviArea ---------- ---------- ---------- ---------- */
+
+/* 全体 */
+#FooterNaviArea { background: #f7f7f7; margin: 50px 0 0 0;line-height: 1.2; }
+#FooterNaviArea,
+#FooterNaviArea a{color:#333;text-decoration: none;}
+#FooterNaviArea .inner { padding: 40px 0 40px 0;  margin: 0 auto; position: relative; }
+#FooterNaviArea li > a { display: block;}
+
+/* 第1階層のボタンのデザイン */
+#FooterNaviArea ._level-1 > li { float:left;}
+#FooterNaviArea ._level-1 > li > a { padding:5px 0; font-size: 14px;}
+
+/* 第2階層のボタンのデザイン */
+#FooterNaviArea ._level-2 {margin:5px 0 2px 5px;}
+#FooterNaviArea ._level-2 > li > a { padding:5px 5px 5px 2px; font-size: 12px;}
+#FooterNaviArea ._level-2 > li._current > a {font-weight: bold;}
+#FooterNaviArea ._underconst a{ color: #999; }
+
+
+/* ! ---------- フッタ追加情報エリア #FooterExtraArea ---------- ---------- ---------- ---------- */
+
+#FooterExtraArea { line-height: 1.6;}
+#FooterExtraArea,
+#FooterExtraArea a{	color:#333;text-decoration: none;}
+#FooterExtraArea .inner { padding: 40px 0 40px 0; margin: 0 auto; position: relative;}
+
+/* ! ---------- フッタそのほかエリア #Copyright,#PageTop ---------- ---------- ---------- ---------- */
+
+/* コピーライト */
+#Copyright { background:#f7f7f7; color:#333; padding: 40px 0 40px 0;}
+
+
+/* ページトップボタン */
+.cms-pagetop { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; padding: 12px 0 0 ; background:#fff; color: #000; text-align: center; cursor: pointer; border-radius:50%; box-shadow:0px 0px 10px rgba(0,0,0,0.2);}
+
+
+/* ! ---------- UI用汎用クラス ---------- ---------- ---------- ---------- */
+
+/* UIのデフォルトのボタンクラス */
+._btn_default{cursor: pointer;}
+._btn_default:hover { opacity: 0.8; }
+
+/* トグルボタンのアイコン */
+._toggle-icon{float:right;padding:0 5px 0 0;}
+
+/* 工事中ボタンのクラス */
+.underconst { cursor: default }
+
+/* 平行メニューでのカラム幅　平行メニューの個数に応じて、いずれかのクラスが適応されます */
+
+.parallel-list ._level-1._sum-1 > li{ width: 100%;}
+.parallel-list ._level-1._sum-2 > li{ width: 50%;}
+.parallel-list ._level-1._sum-3 > li{ width: 33.3%;}
+.parallel-list ._level-1._sum-4 > li{ width: 25%;}
+.parallel-list ._level-1._sum-5 > li{ width: 20%;}
+.parallel-list ._level-1._sum-6 > li{ width: 16.6%;}
+.parallel-list ._level-1._sum-7 > li{ width: 14.2%;}
+.parallel-list ._level-1._sum-8 > li{ width: 12.5%;}
+.parallel-list ._level-1._sum-9 > li{ width: 11%;}
+
+
+/* ! ---------- スマホ閲覧時のUIパーツ ---------- ---------- ---------- ---------- */
+
+#MobileUI{ display: none;}
+#MobileUI .mobileHeader {z-index: 5010;}
+#MobileUI .mobileMenu {z-index: 5000;}
+
+/* スマホ用メニュー背景 */
+#MobileUI .mobileBG { display: none; position: fixed; top: 0; left: 0; height: 100%; width: 100%; background: rgba(0,0,0,0.6);}
+
+/* スマホ用ヘッダ */
+#MobileUI .mobileHeader { position: fixed; overflow: hidden; top: 0; left: 0; height: 50px; width: 100%; box-shadow: 0px 0px 5px rgba(0,0,0,0.2); background: #fff;}
+#MobileUI .mobileHeader .title{display: inline-block; padding: 15px 0 0 10px; font-size: 20px; font-weight: bold;}
+#MobileUI .mobileHeader a{color: #000; text-decoration: none;}
+#MobileUI .menuBtn { position:absolute; top: 0px; right: 0px; width: 50px; height: 38px; text-align: center; padding: 12px 0 0 0;}
+#MobileUI .menuBtn.active {color: #888;}
+
+/* スマホ用メニュー */
+#MobileUI .mobileMenu { display: none; position: fixed; top: 48px; left: 40px; right: 0%; bottom:0px; padding: 0 0 50px 0; background:#fff; overflow-y: scroll;}
+#MobileUI .mobileMenu a { color: #000; text-decoration: none; display: block; }
+#MobileUI .mobileMenu .main ._level-1 > li { border-top: 1px solid #ddd}
+#MobileUI .mobileMenu .main ._level-1 > li > a { padding: 15px 0 15px 10px; font-size: 14px;}
+#MobileUI .mobileMenu .main ._level-2 > li > a { padding: 10px 0 10px 20px; font-size: 12px;}
+#MobileUI .mobileMenu .main ._level-3 > li > a { padding: 8px 0 8px 40px; font-size: 12px;}
+#MobileUI .mobileMenu .main ._level-4 > li > a { padding: 8px 0 8px 55px; font-size: 12px;}
+#MobileUI .mobileMenu .main ._current { font-weight: bold;background: rgba(200,200,0,0.2);}
+#MobileUI .mobileMenu .main ._level-1 > li._ownCurrent { border-top: 2px solid rgba(0,0,0,1)}
+#MobileUI .mobileMenu .main ._level-2{ padding: 0 0 20px 0;}
+
+#MobileUI.show .mobileBG { display: block;}
+#MobileUI.show .menuBtn { color: #aaa;}
+#MobileUI.show .mobileMenu { display: block;}
+
+
+/* ! ---------- レスポンシブ タブレット ---------- ---------- ---------- ---------- */
+
+@media screen and (max-width:960px) {
+
+	/* 
+		タブレット閲覧時には、
+		ヘッダ・グロナビや、フッタメニュー等の幅を狭くする
+	 */
+	 
+	/* ヘッダ */
+	#HeaderArea .inner,
+	#GlobalNaviArea .inner{ width: 760px; }
+	
+	/* メイン */
+	#BodyArea { width: 760px; }
+	#BredList .inner{ width: 720px; }
+	#SideArea { width: 100%;float: none;  margin: 40px auto 20px auto;padding: 0px; }
+	#BredList .inner { margin: 0 auto; }
+	#BodyArea {  margin: 0 auto; }
+	#ContentsArea { float: none; margin: 0 auto; }
+	
+	/* フッタ */
+	#FooterNaviArea { display: none; }
+	#FooterExtraArea .inner {width: 100%;}
+}
+
+/* ! ---------- レスポンシブ スマホ ---------- ---------- ---------- ---------- */
+
+@media screen and (max-width:760px) {
+	/* 
+		スマホ閲覧時には、
+		ヘッダ・グロナビや、フッタメニューを非表示にして、
+		かわりにスマホ用UIを表示する
+	 */
+	
+	#MobileUI { display: block; }
+	#Wapper {margin: 70px 0 0 0;}
+	
+	/* ヘッダ */
+	#HeaderArea { display: none; }
+	#GlobalNaviArea { display: none; }
+	#VisualAreaIndex { display: none; }
+
+	/* メイン */
+	#BredList { display: none; }
+	#BodyArea { width: auto;  }
+	#ContentsAreaWide { margin-top:0;padding: 10px; }
+	#ContentsArea { float: none; width: auto;padding: 10px; }
+	
+	/* フッタ */
+	#Copyright { border:none; padding: 40px 10px 40px 10px; }
+	
+}
+
+
